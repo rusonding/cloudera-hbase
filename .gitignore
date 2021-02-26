@@ -6,6 +6,7 @@
 /build
 /.idea/
 /logs
+/data
 *target/
 *.orig
 *~

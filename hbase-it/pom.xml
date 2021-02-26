@@ -168,6 +168,10 @@
          Interfaces of what is in this dependency
          which does version 2.-->
     <dependency>
+      <groupId>jakarta.xml.ws</groupId>
+      <artifactId>jakarta.xml.ws-api</artifactId>
+    </dependency>
+    <dependency>
       <groupId>javax.ws.rs</groupId>
       <artifactId>javax.ws.rs-api</artifactId>
       <scope>test</scope>

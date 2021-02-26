@@ -53,9 +53,10 @@ import org.apache.hbase.thirdparty.org.apache.commons.collections4.CollectionUti
 
 import com.google.protobuf.ByteString;
 
-import sun.misc.Unsafe;
-
-/**
+//import sun.misc.Unsafe;
+import jdk.internal.misc.Unsafe;
+/*
+*
  * Utility class that handles byte arrays, conversions to/from other types,
  * comparisons, hash code generation, manufacturing keys for HashMaps or
  * HashSets, and can be used as key in maps or trees.

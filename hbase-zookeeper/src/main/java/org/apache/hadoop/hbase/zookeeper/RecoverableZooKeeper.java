@@ -128,7 +128,17 @@ public class RecoverableZooKeeper {
   protected synchronized ZooKeeper checkZk() throws KeeperException {
     if (this.zk == null) {
       try {
+        quorumServers="127.0.0.1:2181";
         this.zk = new ZooKeeper(quorumServers, sessionTimeout, watcher);
+
+        try {
+          System.out.println("------------");
+          System.out.println(this.zk.exists("/hbase", false));
+          System.out.println("------------");
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+
       } catch (IOException ex) {
         LOG.warn("Unable to create ZooKeeper Connection", ex);
         throw new KeeperException.OperationTimeoutException();
