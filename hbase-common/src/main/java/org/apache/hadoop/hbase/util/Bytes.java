@@ -53,7 +53,8 @@ import org.apache.hbase.thirdparty.org.apache.commons.collections4.CollectionUti
 
 import com.google.protobuf.ByteString;
 
-import sun.misc.Unsafe;
+//import sun.misc.Unsafe;
+import jdk.internal.misc.Unsafe;
 
 /**
  * Utility class that handles byte arrays, conversions to/from other types,

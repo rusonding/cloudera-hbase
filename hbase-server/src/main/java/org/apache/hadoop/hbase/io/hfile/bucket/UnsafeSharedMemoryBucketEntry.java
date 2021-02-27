@@ -21,7 +21,8 @@ import org.apache.hadoop.hbase.io.hfile.bucket.BucketCache.BucketEntry;
 import org.apache.hadoop.hbase.util.UnsafeAccess;
 import org.apache.yetus.audience.InterfaceAudience;
 
-import sun.misc.Unsafe;
+//import sun.misc.Unsafe;
+import jdk.internal.misc.Unsafe;
 
 @InterfaceAudience.Private
 public class UnsafeSharedMemoryBucketEntry extends BucketEntry {
