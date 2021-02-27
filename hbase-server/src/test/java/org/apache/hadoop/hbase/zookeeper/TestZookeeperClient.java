@@ -12,7 +12,6 @@ import org.apache.zookeeper.client.StaticHostProvider;
 import org.apache.zookeeper.common.PathUtils;
 import org.junit.Test;
 
-import java.io.IOException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.util.ArrayList;
@@ -24,6 +23,13 @@ import java.util.concurrent.CountDownLatch;
 public class TestZookeeperClient {
     @Test
     public void testClient() {
+        String connectString = "localhost:2181";
+
+        ConnectStringParser connectStringParser = new ConnectStringParser(connectString);
+        final ArrayList<InetSocketAddress> addresses = connectStringParser.getServerAddresses();
+        HostProvider hostProvider = new StaticHostProvider(addresses);
+        System.out.println(hostProvider);
+
         Configuration configuration = HBaseConfiguration.create();
         configuration.set(HConstants.ZOOKEEPER_QUORUM,"localhost");
         configuration.set(HConstants.ZOOKEEPER_CLIENT_PORT,"2181");
